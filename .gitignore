@@ -1,0 +1,12 @@
+node_modules/
+.env
+*.pkl
+__pycache__/
+*.pyc
+.DS_Store
+docs/
+member_splits/
+ai/venv/
+*.jpg
+*.png
+!frontend/public/cars/*
