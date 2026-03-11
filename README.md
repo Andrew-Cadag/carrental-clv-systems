@@ -13,30 +13,6 @@ Before you begin, ensure you have the following installed:
 - **[Python](https://www.python.org/)** (v3.9 or higher)
 - **[Git](https://git-scm.com/)**
 
-## Git Branch Strategy
-
-This project uses a feature branch workflow:
-
-- `main` - Production-ready code
-- `frontend` - Frontend development branch
-- `backend` - Backend API development branch
-- `ai` - AI/ML model development branch
-
-### Working with Branches
-
-```bash
-# Clone the repository
-git clone https://github.com/Andrew-Cadag/carrental-clv-system.git
-cd carrental-clv-system
-
-# Switch to your working branch
-git checkout backend      # for backend work
-git checkout frontend     # for frontend work
-git checkout ai           # for AI/ML work
-```
-
-**Important**: Always work on the appropriate branch for your task. Never commit directly to `main`.
-
 ## Local Setup
 
 ### 1. Database Setup (XAMPP)
@@ -103,9 +79,10 @@ source venv/bin/activate
 
 pip install -r requirements.txt
 
-# Get clv_model.pkl from group chat/Google Drive
-# Place it in the ai/ folder before running
+# Train the CLV prediction model (generates clv_model.pkl)
+python train.py
 
+# Start the Flask API
 python app.py
 ```
 
@@ -144,9 +121,15 @@ carrental-clv-system/
 ## Default Login Credentials
 
 After database import, you can login as:
-- **Admin**: admin@carrental.com / admin123
-- **Staff**: staff@carrental.com / staff123
-- **Customer**: customer@carrental.com / customer123
+
+| Role | Email | Password |
+|------|-------|----------|
+| **Admin** | `admin@driveease.com` | `admin123` |
+| **Staff** | `staff@driveease.com` | `staff123` |
+| **Customer** | `john@example.com` | `password123` |
+| **Customer (sample)** | `maria.santos@email.com` | `password123` |
+
+*Note: 10 sample customers are pre-seeded with `password123` for demonstration purposes.*
 
 ## Troubleshooting
 
@@ -156,18 +139,15 @@ After database import, you can login as:
 
 ## Contributing
 
-- Work only on your assigned branch
-- Never commit directly to `main`
-- At the end of each sprint create a Pull Request to merge into `main`
-- Leader reviews and merges
-- Screenshot the merged PR for scrum minutes
+- Follow the established code style
+- Write descriptive commit messages
+- Test your changes before pushing
 
 ### Commit Message Format
 ```
-feat: add booking form
-fix: resolve login bug
-style: update dashboard layout
-docs: update README
+feat: add new feature
+fix: resolve bug
+docs: update documentation
 ```
 
 ## License
