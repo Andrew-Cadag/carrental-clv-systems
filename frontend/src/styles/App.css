@@ -1,0 +1,232 @@
+/* Mobile Responsive Styles */
+
+/* Mobile menu toggle */
+.mobile-menu-btn {
+  display: none;
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 60;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  background-color: #1f3864;
+  color: white;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Sidebar overlay for mobile */
+.sidebar-overlay {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* Show hamburger */
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  /* Sidebar becomes a slide-over */
+  .app-sidebar {
+    position: fixed !important;
+    left: -280px;
+    top: 0;
+    bottom: 0;
+    z-index: 55;
+    transition: left 0.3s ease;
+    width: 256px !important;
+    min-width: 256px !important;
+    box-shadow: 4px 0 24px rgba(0,0,0,0.15);
+  }
+
+  .app-sidebar.open {
+    left: 0;
+  }
+
+  .sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 50;
+  }
+
+  .sidebar-overlay.open {
+    display: block;
+  }
+
+  /* Main content takes full width */
+  .app-layout {
+    flex-direction: column !important;
+  }
+
+  .app-main {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  /* Header adjustments */
+  .app-main header {
+    padding: 16px 16px 16px 60px !important;
+  }
+
+  .app-main header h2 {
+    font-size: 22px !important;
+  }
+
+  /* Content padding */
+  .app-content {
+    padding: 16px !important;
+  }
+
+  /* Tables scroll horizontally */
+  .table-wrapper {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table-wrapper table {
+    min-width: 600px;
+  }
+
+  /* Filter bar wraps */
+  .filter-bar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+
+  .filter-bar > div {
+    width: 100% !important;
+  }
+
+  .filter-date-group {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .filter-date-group > div {
+    width: 100% !important;
+  }
+
+  .filter-bar input[type="date"],
+  .filter-bar select,
+  .filter-bar input[type="number"] {
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .filter-bar button {
+    width: 100% !important;
+  }
+
+  /* Card grid single column on small screens */
+  .car-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Dashboard stat cards */
+  .stat-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* Booking modal */
+  .booking-modal {
+    width: 95% !important;
+    max-width: 95% !important;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .calendar-container {
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  /* Side panels (chat, edit) full width on mobile */
+  .side-panel {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .panel-sidebar {
+    display: none !important;
+  }
+
+  /* User avatar in header - hide name on mobile */
+  .header-user-name {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Landing page responsive */
+.landing-nav {
+  padding: 16px 80px;
+}
+
+.landing-hero {
+  display: flex;
+  padding: 80px;
+  gap: 60px;
+  align-items: center;
+}
+
+.landing-section {
+  padding: 80px;
+}
+
+.landing-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+@media (max-width: 768px) {
+  .landing-nav {
+    padding: 12px 20px !important;
+  }
+
+  .landing-hero {
+    flex-direction: column !important;
+    padding: 40px 20px !important;
+    gap: 32px !important;
+  }
+
+  .landing-hero h1 {
+    font-size: 36px !important;
+  }
+
+  .landing-section {
+    padding: 40px 20px !important;
+  }
+
+  .landing-features-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Auth pages */
+  .auth-container {
+    padding: 20px !important;
+  }
+
+  .auth-card {
+    padding: 24px !important;
+    margin: 0 16px !important;
+  }
+
+  .app-main header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
